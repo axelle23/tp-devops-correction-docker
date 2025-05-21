@@ -1,7 +1,8 @@
 - name: launch backend container
   docker_container:
     name: backend_devops
-    image: "abrosse/tp-devops-backend:1.0"
+    image: "abrosse/tp-devops-backend:latest"
+    pull: yes
     ports:
      - "8080:9000"
     networks:
