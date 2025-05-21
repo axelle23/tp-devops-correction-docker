@@ -1,7 +1,7 @@
 - name: launch proxy
   docker_container:
     name: proxy_devops
-    image: "abrosse/tp-devops-httpd:latest"
+    image: "tp-devops-httpd:latest"
     pull: yes
     ports:
      - 80:80

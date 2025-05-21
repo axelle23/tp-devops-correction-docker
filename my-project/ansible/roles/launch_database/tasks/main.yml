@@ -2,7 +2,7 @@
 - name: launch database
   docker_container:
     name: database
-    image: "abrosse/tp-devops-database:latest"
+    image: "tp-devops-database:latest"
     pull: yes
     env:
       POSTGRES_PASSWORD: we4reDATA
