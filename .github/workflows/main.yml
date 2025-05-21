@@ -24,8 +24,10 @@ jobs:
   verify-sonar:
    runs-on: ubuntu-24.04
    steps:
-      - name: Connect to sonar 
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=axelle23 -Dsonar.organization=axelle23 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./simple-api
+    - uses: actions/checkout@v4
+    - name: Connect to sonar 
+      run: mvn -B verify sonar:sonar -Dsonar.projectKey=axelle23 -Dsonar.organization=axelle23 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} 
+      working-directory: simple-api
 
   build-and-push-docker-image:
     needs: test-backend
