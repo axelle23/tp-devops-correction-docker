@@ -21,7 +21,13 @@ jobs:
         run: mvn clean verify
         working-directory: simple-api
       
- 
+  verify-sonar:
+   runs-on: ubuntu-24.04
+   steps:
+      - name: Connect to sonar 
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=axelle23 -Dsonar.organization=axelle23 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  
+        working-directory: simple-api
+        
   build-and-push-docker-image:
     needs: test-backend
     runs-on: ubuntu-24.04
@@ -56,10 +62,5 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
           push: true
 
-  verify-sonar:
-   runs-on: ubuntu-24.04
-   steps:
-      - name: Connect to sonar 
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=axelle23 -Dsonar.organization=axelle23 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  
-        working-directory: simple-api
+
        
