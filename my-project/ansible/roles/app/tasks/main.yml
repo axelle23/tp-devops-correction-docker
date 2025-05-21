@@ -1,2 +1,9 @@
----
-# tasks file for roles/app
+- name: Create app container
+  hosts: localhost
+  gather_facts: false
+  tasks:
+
+   - name: launch backend container
+     docker_container:
+       name: backend_devops
+       image: abrosse/tp-devops-backend:1.0

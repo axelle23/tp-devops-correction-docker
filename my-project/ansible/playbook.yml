@@ -5,3 +5,7 @@
   tasks:
    - name: Test connection
      ping:
+
+  roles: 
+    - install_docker
+    

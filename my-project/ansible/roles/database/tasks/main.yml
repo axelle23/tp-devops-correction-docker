@@ -6,4 +6,9 @@
    - name: launch database
      docker_container:
        name: database_devops
-       image: abrosse/tp-devops-database:1.0
+       image: "abrosse/tp-devops-database:1.0"
+       networks:
+       - name: "devops-network"
+
+
+    
