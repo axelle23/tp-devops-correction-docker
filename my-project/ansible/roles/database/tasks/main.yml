@@ -1,2 +1,9 @@
----
-# tasks file for roles/database
+- name: Create Docker network
+  hosts: localhost
+  gather_facts: false
+  tasks:
+
+   - name: launch database
+     docker_container:
+       name: database_devops
+       image: abrosse/tp-devops-database:1.0
