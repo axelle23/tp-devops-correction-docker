@@ -8,4 +8,5 @@
 
   roles: 
     - install_docker
+    - launch_database
     
