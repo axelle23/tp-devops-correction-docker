@@ -1,6 +1,8 @@
 - hosts: all
-  gather_facts: false
+  gather_facts: true
   become: true
+  vars_files:
+    - env.yml
 
   tasks:
    - name: Test connection
@@ -8,5 +10,6 @@
 
   roles: 
     - install_docker
+    - create_network
     - launch_database
-    
+    - proxy

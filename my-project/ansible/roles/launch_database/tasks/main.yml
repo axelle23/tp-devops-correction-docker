@@ -1,14 +1,12 @@
-- name: Create database container
-  hosts: localhost
-  gather_facts: false
-  tasks:
 
-   - name: launch database
-     docker_container:
-       name: database_devops
-       image: "abrosse/tp-devops-database:1.0"
-       networks:
-       - name: "devops-network"
+- name: launch database
+  docker_container:
+    name: database_devops
+    image: "abrosse/tp-devops-database:1.0"
+    env:
+      POSTGRES_PASSWORD: pwd
+    networks:
+    - name: "devops-network"
 
 
     

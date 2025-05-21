@@ -1,0 +1,4 @@
+- name: Create a Docker network
+  docker_network:
+    name: devops-network
+    driver: bridge

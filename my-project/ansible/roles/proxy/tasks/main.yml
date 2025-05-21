@@ -1,2 +1,11 @@
----
-# tasks file for roles/proxy
+- name: launch proxy
+  docker_container:
+    name: proxy_devops
+    image: "abrosse/tp-devops-httpd:1.0"
+    ports:
+     - 80:80
+    networks:
+     - name: "devops-network"
+    env:
+     DATABASE_HOST: database
+     DATABASE_PASSWORD: pwd

@@ -1,8 +1,0 @@
-- name: Create Docker network
-  hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: Create a Docker network
-      community.docker.docker_network:
-        name: devops-network
-        driver: bridge
