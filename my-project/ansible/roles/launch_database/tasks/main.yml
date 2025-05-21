@@ -1,10 +1,13 @@
 
 - name: launch database
   docker_container:
-    name: database_devops
+    name: database
     image: "abrosse/tp-devops-database:1.0"
     env:
-      POSTGRES_PASSWORD: pwd
+      POSTGRES_PASSWORD: we4reDATA
+      POSTGRES_DB: db 
+      POSTGRES_USER: abrosse
+      
     networks:
     - name: "devops-network"
 

@@ -12,4 +12,5 @@
     - install_docker
     - create_network
     - launch_database
+    - launch_backend
     - proxy

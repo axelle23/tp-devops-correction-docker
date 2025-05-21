@@ -1,0 +1,13 @@
+- name: launch backend container
+  docker_container:
+    name: backend_devops
+    image: "abrosse/tp-devops-backend:1.0"
+    ports:
+     - "8080:9000"
+    networks:
+     - name: "devops-network"
+    env:
+      DATABASE_HOST: database_devops
+      DATABASE_PASSWORD: we4reDATA
+      DATABASE_PORT: "5432"
+      DATABASE_NAME: db
