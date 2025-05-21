@@ -6,7 +6,7 @@ on:
   pull_request:
  
 jobs:
-  test-backend:
+  test-my-project:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
