@@ -17,7 +17,7 @@ Ce dépôt contient une API simple, un serveur HTTP avec page statique, une base
 
 📂 Détail des dossiers
 
-🔁 .github/workflows/
+## 🔁 .github/workflows/
 Contient les workflows GitHub Actions, notamment deploy.yml pour :
 
 Générer une clé SSH temporaire
@@ -26,40 +26,35 @@ Se connecter au serveur distant
 
 Exécuter Ansible pour déployer automatiquement l’application
 
-🐘 database/
+## 🐘 database/
 Contient la configuration Docker pour une base PostgreSQL :
 
 docker-compose.yml : définit le service PostgreSQL avec volume, utilisateur, mot de passe.
 
 README.md : instructions spécifiques au service base de données.
 
-🌐 http-server/
+## 🌐 http-server/
 Ce dossier contient un serveur HTTP simple qui affiche une page HTML.
 
 Peut être basé sur un serveur comme NGINX, Apache, ou un serveur maison.
 
 Sert à exposer la page statique principale sur axelle.brosse.takima.cloud.
 
-🤖 my-project/ansible/
+## 🤖 my-project/ansible/
 Contient les scripts Ansible pour le déploiement :
 
 inventories/setup.yml : liste des hôtes et variables (ex: ansible_user)
 
 playbook.yml : définit les tâches à exécuter sur le serveur (copie des fichiers, docker-compose up, etc.)
 
-🧩 simple-api/
+## 🧩 simple-api/
 API Java simple, probablement déployée en tant que microservice.
 
 Contient le code source Java
 
 Peut avoir son propre Dockerfile pour conteneurisation
 
-🔐 ssh/
-Dossier contenant les clés SSH utilisées pour la connexion Ansible.
-
-⚠️ Ne pas versionner de clé privée dans ce dossier – les clés doivent être gérées via GitHub Secrets ou .gitignore.
-
-🐳 docker-compose.yaml
+### 🐳 docker-compose.yaml
 Fichier principal d’orchestration. Il peut :
 
 Lancer tous les services (API, serveur HTTP, PostgreSQL)
@@ -80,11 +75,15 @@ ansible/inventories/setup.yml : inventaire Ansible (liste des hôtes).
 ansible/playbook.yml : liste des tâches à exécuter (installation Docker, lancement des containers...).
 
 # ⚙️ CI/CD avec GitHub Actions
-Un fichier deploy.yml dans .github/workflows/ permet de déclencher le déploiement à chaque push sur main, en :
+Un fichier main.yml dans .github/workflows/ permet de déclencher le déploiement à chaque push sur main, en :
+
+Vérifier le déploiement de container.
+
+Créer et update les images httpd, simple-api et backend sur DockerHub.
+
+Vérifier la pipeline sur SonarCloud.
 
 Se connectant au serveur distant via SSH.
-
-Transférant les fichiers.
 
 Exécutant ansible-playbook.
 
