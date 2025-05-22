@@ -93,4 +93,32 @@ jobs:
       - name: Run Ansible Playbook
         run: ansible-playbook -i my-project/ansible/inventories/setup.yml my-project/ansible/playbook.yml 
 
+        jobs:
+  build_front:
+    runs-on: ubuntu-latest
+
+
+  front-end:
+    needs: test-backend
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: 📥 Checkout du code
+        uses: actions/checkout@v3
+
+      - name: 🟢 Installer Node.js et Yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'       # ou la version que ton projet utilise
+          cache: 'yarn'
+
+      - name: 📦 Installer les dépendances front
+        working-directory: ./frontend  # adapte si ton front est ailleurs
+        run: yarn install
+
+      - name: 🔨 Build du frontend
+        working-directory: ./frontend
+        run: yarn build
+
+
        

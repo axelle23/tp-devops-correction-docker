@@ -5,3 +5,4 @@ all:
  children:
    prod:
      hosts: axelle.brosse.takima.cloud
+    # The host where we will be able to see our api 
