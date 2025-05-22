@@ -80,6 +80,16 @@ jobs:
         run: 
           python -m pip install --upgrade pip && pip install ansible
 
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.ID_RSA }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Add SSH Host Key
+        run: 
+          ssh-keyscan axelle.brosse.takima.cloud >> ~/.ssh/known_hosts
+
       - name: Run Ansible Playbook
         run: ansible-playbook -i my-project/ansible/inventories/setup.yml my-project/ansible/playbook.yml 
 
