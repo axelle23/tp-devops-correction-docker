@@ -5,9 +5,9 @@
     image: "abrosse/tp-devops-database:latest"
     pull: yes
     env:
-      POSTGRES_PASSWORD: we4reDATA
+      POSTGRES_PASSWORD: pwd
       POSTGRES_DB: db 
-      POSTGRES_USER: abrosse
+      POSTGRES_USER: usr
       
     networks:
     - name: "devops-network"
