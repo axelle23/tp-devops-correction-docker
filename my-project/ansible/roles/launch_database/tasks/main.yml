@@ -5,7 +5,7 @@
     image: "abrosse/tp-devops-database:latest"
     pull: yes
     env:
-      POSTGRES_PASSWORD: pwd
+      POSTGRES_PASSWORD: "{{ DATABASE_PASSWORD }}"
       POSTGRES_DB: db 
       POSTGRES_USER: usr
       

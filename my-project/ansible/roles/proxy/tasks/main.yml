@@ -4,9 +4,9 @@
     image: "abrosse/tp-devops-httpd:latest"
     pull: yes
     ports:
-     - 81:80
+     - "{{ port_http }}"
     networks:
      - name: "devops-network"
     env:
      DATABASE_HOST: database
-     DATABASE_PASSWORD: pwd
+     DATABASE_PASSWORD: "{{ DATABASE_PASSWORD }}"
