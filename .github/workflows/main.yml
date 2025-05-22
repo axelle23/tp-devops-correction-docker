@@ -94,9 +94,6 @@ jobs:
         run: ansible-playbook -i my-project/ansible/inventories/setup.yml my-project/ansible/playbook.yml 
 
         jobs:
-  build_front:
-    runs-on: ubuntu-latest
-
 
   front-end:
     needs: test-backend
