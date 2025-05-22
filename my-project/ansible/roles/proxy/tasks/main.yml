@@ -4,7 +4,7 @@
     image: "abrosse/tp-devops-httpd:latest"
     pull: yes
     ports:
-     - "{{ port_http }}"
+     - "81:80"
     networks:
      - name: "devops-network"
     env:
