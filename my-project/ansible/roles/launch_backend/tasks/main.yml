@@ -4,11 +4,11 @@
     image: "abrosse/tp-devops-simple-api:latest"
     pull: yes
     ports:
-     - "8082:9000"
+     - "{{ port_backend }}}"
     networks:
      - name: "devops-network"
     env:
       DATABASE_HOST: database
-      DATABASE_PASSWORD: pwd
-      DATABASE_PORT: "5432"
+      DATABASE_PASSWORD: "{{ DATABASE_PASSWORD }}"
+      DATABASE_PORT: "{{ db_port }}"
       DATABASE_NAME: db
