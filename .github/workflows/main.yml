@@ -81,7 +81,6 @@ jobs:
           python -m pip install --upgrade pip && pip install ansible
 
       - name: Run Ansible Playbook
-      
         run: ansible-playbook -i my-project/ansible/inventories/setup.yml my-project/ansible/playbook.yml -e "ansible_ssh_private_key= ${{ secrets.ID_RSA }}"
 
        
