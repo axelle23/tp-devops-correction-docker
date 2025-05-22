@@ -1,6 +1,6 @@
 - name: launch proxy
   docker_container:
-    name: proxy_devops
+    name: httpd
     image: "tp-devops-httpd:latest"
     pull: yes
     ports:

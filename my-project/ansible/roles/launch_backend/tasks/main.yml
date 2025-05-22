@@ -1,6 +1,6 @@
 - name: launch backend container
   docker_container:
-    name: backend_devops
+    name: backend
     image: "tp-devops-backend:latest"
     pull: yes
     ports:
