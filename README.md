@@ -1,7 +1,25 @@
 # TP DevOps Correction Docker
 
-Correction de la partie Docker du module DevOps. Amusez-vous bien avec GitHub Actions !
 
+
+# 📁 Structure du projet
+Ce projet est une architecture simple de déploiement d'une API avec une interface web statique, une base de données PostgreSQL, le tout orchestré avec Docker et déployé via Ansible.
+
+```
+.
+├── backend_api_basic/
+├── backend_api_multitask/
+├── postgres/
+├── docker-compose.yml
+└── README.md
+```
+
+## 📦 backend_api_basic/
+Ce dossier contient une API Java basique.
+
+Main.java : le fichier source principal de l’API.
+
+Main.class : la version compilée de Main.java.
 
 # 🚀 Déploiement avec Ansible
 Le projet est conçu pour être déployé automatiquement sur un serveur distant (ex. axelle.brosse.takima.cloud) via Ansible et GitHub Actions.
